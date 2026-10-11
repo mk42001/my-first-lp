@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFÉ MORI | 森のほとりの珈琲店</title>
+  <meta name="description" content="CAFÉ MORI は、森のほとりで一杯ずつ丁寧に淹れる珈琲店です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <a href="#hero" class="logo">CAFÉ MORI</a>
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#hero" class="nav-link">Top</a>
+      <a href="#concept" class="nav-link">Concept</a>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#access" class="nav-link">Access</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <p class="hero-sub">Coffee &amp; Quiet Time</p>
+        <h1 class="hero-title">森のほとりで、<br>一杯の静けさを。</h1>
+        <a href="#menu" class="btn">メニューを見る</a>
+      </div>
+      <a href="#concept" class="scroll-hint" aria-label="下へスクロール"><span>Scroll</span></a>
+    </section>
+
+    <section class="section concept" id="concept">
+      <div class="container narrow reveal">
+        <h2 class="section-title"><span>Concept</span>珈琲と過ごす時間</h2>
+        <p>CAFÉ MORI は、木々に囲まれた小さな珈琲店です。<br>
+        自家焙煎した豆を、注文ごとに一杯ずつハンドドリップで。<br>
+        窓から差し込む光と、豆の香りに包まれて、ゆっくりとお過ごしください。</p>
+      </div>
+    </section>
+
+    <section class="section menu" id="menu">
+      <div class="container">
+        <h2 class="section-title reveal"><span>Menu</span>おすすめのメニュー</h2>
+        <ul class="menu-grid">
+          <li class="card reveal">
+            <div class="card-img card-img--1" role="img" aria-label="ブレンドコーヒー"></div>
+            <h3>森のブレンド</h3>
+            <p>深煎りのコクと、やさしい甘さ。当店の定番です。</p>
+            <span class="price">¥550</span>
+          </li>
+          <li class="card reveal">
+            <div class="card-img card-img--2" role="img" aria-label="カフェラテ"></div>
+            <h3>はちみつラテ</h3>
+            <p>地元の蜂蜜とミルクで仕上げた、まろやかな一杯。</p>
+            <span class="price">¥650</span>
+          </li>
+          <li class="card reveal">
+            <div class="card-img card-img--3" role="img" aria-label="シングルオリジン"></div>
+            <h3>シングルオリジン</h3>
+            <p>季節ごとに選ぶ、華やかな香りの浅煎り豆。</p>
+            <span class="price">¥700</span>
+          </li>
+          <li class="card reveal">
+            <div class="card-img card-img--4" role="img" aria-label="焼き菓子"></div>
+            <h3>焼き菓子セット</h3>
+            <p>毎朝焼き上げるスコーンと、本日のコーヒー。</p>
+            <span class="price">¥900</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section access" id="access">
+      <div class="container">
+        <h2 class="section-title reveal"><span>Access</span>店舗情報</h2>
+        <div class="access-body reveal">
+          <dl class="info">
+            <dt>住所</dt>
+            <dd>〒000-0000<br>東京都○○区森町 1-2-3</dd>
+            <dt>営業時間</dt>
+            <dd>8:00 – 18:00(L.O. 17:30)</dd>
+            <dt>定休日</dt>
+            <dd>毎週水曜日</dd>
+            <dt>アクセス</dt>
+            <dd>○○駅より徒歩 7 分</dd>
+          </dl>
+          <div class="map" role="img" aria-label="地図のイメージ">
+            <span>Map</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="logo">CAFÉ MORI</p>
+    <small>&copy; 2026 CAFÉ MORI. This is a fictional shop.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
