@@ -40,6 +40,44 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach((s) => spy.observe(s));
 
+  // お問い合わせフォームのバリデーション
+  const form = document.getElementById('contactForm');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const rules = {
+    name: (v) => (v ? '' : 'お名前を入力してください。'),
+    email: (v) => {
+      if (!v) return 'メールアドレスを入力してください。';
+      return emailPattern.test(v) ? '' : 'メールアドレスの形式が正しくありません。';
+    },
+    message: (v) => (v ? '' : 'お問い合わせ内容を入力してください。'),
+  };
+
+  const validateField = (input) => {
+    const msg = rules[input.name](input.value.trim());
+    input.closest('.field').classList.toggle('invalid', Boolean(msg));
+    input.setAttribute('aria-invalid', String(Boolean(msg)));
+    document.getElementById(`${input.id}Error`).textContent = msg;
+    return !msg;
+  };
+
+  const fields = form.querySelectorAll('input, textarea');
+  fields.forEach((f) => f.addEventListener('blur', () => validateField(f)));
+  fields.forEach((f) => f.addEventListener('input', () => {
+    if (f.closest('.field').classList.contains('invalid')) validateField(f);
+  }));
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const results = Array.from(fields, validateField);
+    const firstInvalid = Array.from(fields).find((_, i) => !results[i]);
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
+    alert('送信しました');
+    form.reset();
+  });
+
   // スクロールで要素をふわっと表示
   const reveal = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
